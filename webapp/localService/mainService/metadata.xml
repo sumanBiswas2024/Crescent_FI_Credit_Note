@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zfi_credit_note_srv.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZFI_CREDIT_NOTEType">
+                <Key>
+                    <PropertyRef Name="CompanyCode"/>
+                    <PropertyRef Name="FiscalYear"/>
+                    <PropertyRef Name="Document_No"/>
+                    <PropertyRef Name="item_No"/>
+                </Key>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="FiscalYear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Document_No" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="item_No" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Document_Date" Type="Edm.Date"/>
+                <Property Name="ref_doc" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="ref_date" Type="Edm.Date"/>
+                <Property Name="GLAccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="GLAccountLongName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="HSN" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Total_Price" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Cgst_Amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Cgst_Rate" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Sgst_Amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Sgst_Rate" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Igst_Amt" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Igst_Rate" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="3"/>
+                <Property Name="Customer_Name" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="Customer_Address_Line1" Type="Edm.String" Nullable="false" MaxLength="96"/>
+                <Property Name="Customer_Address_Line3" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Customer_Address_Line4" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Customer_Full_Address" Type="Edm.String" Nullable="false" MaxLength="128"/>
+                <Property Name="Customer_GST_No" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Customer_PAN_No" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Place_Of_Supply_City" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Note_In_Header" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Plant_Address_Line1" Type="Edm.String" Nullable="false" MaxLength="71"/>
+                <Property Name="Plant_Address_Line2" Type="Edm.String" Nullable="false" MaxLength="67"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Plant_State_Code" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="BusinessPlace" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="GSTN_No" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="PAN_No" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZFI_CREDIT_NOTE" EntityType="com.sap.gateway.srvd.zfi_credit_note_srv.v0001.ZFI_CREDIT_NOTEType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/FiscalYear">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Document_No">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Journal Entry"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=FARP_BELNR_D"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/item_No">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Posting View Item"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Journal Entry Posting View Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/ref_doc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Reference ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/GLAccount">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="G/L Account"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=FIS_RACCT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/HSN">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="HSN/SAC Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="HSN or SAC Code"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=J_1IG_HSN_SAC"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Currency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Transaction Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Total_Price">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Cgst_Amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Sgst_Amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Igst_Amt">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Customer_GST_No">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Number 3"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=STCD3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/BusinessPlace">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Business Place"/>
+                <Annotation Term="SAP__common.Heading" String="BusP"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=FARP_BUPLA"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/GSTN_No">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Number 3"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=J_1IGSTCD3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType">
+                <Annotation Term="SAP__common.Label" String="FI Credit note"/>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                        <PropertyPath>FiscalYear</PropertyPath>
+                        <PropertyPath>Document_No</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZFI_CREDIT_NOTE">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="IANATimezoneFormat" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="TextDirectionLayout" Bool="true"/>
+                        <PropertyValue Property="Treeview" Bool="true"/>
+                        <PropertyValue Property="UploadToFileShare" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Document_Date">
+                <Annotation Term="SAP__common.Label" String="Posting Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/ref_date">
+                <Annotation Term="SAP__common.Label" String="Journal Entry Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/GLAccountLongName">
+                <Annotation Term="SAP__common.Label" String="G/L Account Long Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Customer_Name">
+                <Annotation Term="SAP__common.Label" String="Name of Customer"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Customer_Address_Line3">
+                <Annotation Term="SAP__common.Label" String="Street 4"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_STRSPP3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Customer_Address_Line4">
+                <Annotation Term="SAP__common.Label" String="Street 5"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=AD_LCTN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Place_Of_Supply_City">
+                <Annotation Term="SAP__common.Label" String="Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Note_In_Header">
+                <Annotation Term="SAP__common.Label" String="Item Text"/>
+                <Annotation Term="SAP__common.DocumentationRef" String="urn:sap-com:documentation:key?=type=DE&amp;id=FARP_SGTXT"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZFI_CREDIT_NOTEType/Plant_State_Code">
+                <Annotation Term="SAP__common.Label" String="Description"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,95 @@
+{
+    "deliveryDocument": "80000123",
+    "companyInfo": {
+      "name": "CRESCENT FOUNDRY CO PVT. LTD",
+      "address": [
+        "Address from Plant - 1st Line Item",
+        "Address from Plant - 2nd Line Item",
+        "Address from Plant - 3rd Line Item",
+        "Address from Plant - 4th Line Item",
+        "Address from Plant - 5th Line Item"
+      ],
+      "gstNo": "GSTNO-Plant",
+      "panNo": "AABCC0101C",
+      "stateCode": "19"
+    },
+    "headOffice": {
+      "tel": "",
+      "fax": "",
+      "website": "",
+      "address": [
+        "HO ADDRESS - 1st Line",
+        "HO ADDRESS - 2nd Line",
+        "HO ADDRESS - 3rd Line",
+        "HO ADDRESS - 4th Line"
+      ]
+    },
+    "documentDetails": {
+      "documentNo": "DN-456789",
+      "documentDate": "2025-07-18",
+      "refNo": "REF-2025-001",
+      "refDate": "2025-07-15"
+    },
+    "billTo": {
+      "vendorName": "Vendor ABC",
+      "address": [
+        "Vendor Address line 1",
+        "Vendor Address line 2",
+        "Vendor Address line 3",
+        "Vendor Address line 4",
+        "Vendor Address line 5"
+      ],
+      "gstNo": "22ABCDE1234F1Z5",
+      "panNo": "ABCDE1234F",
+      "placeOfSupply": "West Bengal"
+    },
+    "shipTo": {
+      "vendorName": "Vendor ABC",
+      "address": [
+        "Ship to Party Address 1",
+        "Ship to Party Address 2",
+        "Ship to Party Address 3",
+        "Ship to Party Address 4",
+        "Ship to Party Address 5"
+      ]
+    },
+    "items": [
+      {
+        "MaterialCode": "MAT001",
+        "MaterialDescription": "Iron Casting",
+        "HSN": "7325",
+        "Quantity": 100,
+        "UOM": "EA",
+        "UnitPrice": 500,
+        "TotalPrice": 50000,
+        "Currency": "INR",
+        "CGSTRate": 9,
+        "CGSTAmt": 4500,
+        "SGSTRate": 9,
+        "SGSTAmt": 4500,
+        "IGSTRate": 0,
+        "IGSTAmt": 0
+      },
+      {
+        "MaterialCode": "MAT002",
+        "MaterialDescription": "Steel Casting",
+        "HSN": "7345",
+        "Quantity": 120,
+        "UOM": "EA",
+        "UnitPrice": 520,
+        "TotalPrice": 20000,
+        "Currency": "INR",
+        "CGSTRate": 9,
+        "CGSTAmt": 3500,
+        "SGSTRate": 9,
+        "SGSTAmt": 4200,
+        "IGSTRate": 0,
+        "IGSTAmt": 0
+      }
+    ],
+    "reason": "Rate difference adjustment",
+    "noteInHeader": "Ensure credit note is referenced in next PO.",
+    "grandTotal": 59000,
+    "amountInWords": "Fifty Nine Thousand Rupees Only"
+  }
+  

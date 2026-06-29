@@ -1,0 +1,24 @@
+{
+  "generationParameters": {
+    "generationDate": "Tue Jul 29 2025 09:26:10 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP On-Premise)",
+    "metadataFilename": "",
+    "serviceUrl": "https://my418443.s4hana.cloud.sap/sap/opu/odata4/sap/zcredit_debit_note_bind/srvd/sap/zcredit_debit_note_form_srv/0001/",
+    "appName": "creditnoteformfico",
+    "appTitle": "Credit Note Form",
+    "appDescription": "An SAP Fiori application.",
+    "appNamespace": "com.crescent.app",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.130.11",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.18.3",
+    "template": "Basic V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

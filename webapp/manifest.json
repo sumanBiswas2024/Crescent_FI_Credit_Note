@@ -1,0 +1,166 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.crescent.app.creditnoteformfico",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.3",
+      "toolsId": "81cc65aa-8f34-4f76-b8a7-049001da9115"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata4/sap/zfi_credit_note_srv_bind/srvd/sap/zfi_credit_note_srv/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      },
+      "docService": {
+        "uri": "/sap/opu/odata4/sap/zfi_crdnt_srv_bind/srvd/sap/zfi_crdnt_srv/0001/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/zfi_crdnt_srv/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "ZFICREDITFORM-Display": {
+          "semanticObject": "ZFICREDITFORM",
+          "action": "Display",
+          "title": "{{ZFICREDITFORM-Display.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.130.11",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.infocus.creditnoteformfico.i18n.i18n"
+        }
+      },
+      "globalData": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "creditNoteData": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "documentNoData": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "docService": {
+        "dataSource": "docService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      "js": [
+        {
+          "uri": "libs/pdfmake/pdfmake.min.js"
+        },
+        {
+          "uri": "libs/pdfmake/vfs_fonts.js"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "com.crescent.app.creditnoteformfico.view",
+        "async": true,
+        "viewPath": "com.crescent.app.creditnoteformfico.view"
+      },
+      "routes": [
+        {
+          "name": "Routecreditnoteform",
+          "pattern": ":?query:",
+          "target": [
+            "Targetcreditnoteform"
+          ]
+        }
+      ],
+      "targets": {
+        "Targetcreditnoteform": {
+          "id": "creditnoteform",
+          "name": "creditnoteform"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.crescent.app.creditnoteformfico.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

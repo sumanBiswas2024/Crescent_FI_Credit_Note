@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog id="idDocumentNoDialog" title="Select Document No" draggable="true" resizable="true">
+		<content>
+			<Toolbar>
+				<SearchField id="idDocumentNoSearchField" placeholder="Search..." liveChange=".onSearchDocumentNo"/>
+			</Toolbar>
+			<List 
+			id="idDocumentNoList" 
+			mode="MultiSelect"
+			growing="true" 
+			growingThreshold="1000" 
+			selectionChange=".onSelectionChangeDocumentNo"
+			items="{documentNoData>/value}">
+			    
+				<StandardListItem title="{documentNoData>ReferenceDocument}"/>
+			</List>
+		</content>
+		<buttons>
+			<Button text="OK" press=".onConfirmDocumentNo"/>
+			<Button text="Cancel" press=".onCloseDocumentNo"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

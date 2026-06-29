@@ -1,0 +1,131 @@
+<mvc:View
+    controllerName="com.crescent.app.creditnoteformfico.controller.creditnoteform"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:svm="sap.ui.comp.smartvariants"
+>
+    <f:DynamicPage id="pageId">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <svm:SmartVariantManagement
+                        id="svm"
+                        showExecuteOnSelection="true"
+                    />
+                </f:heading>
+                <f:expandedContent>
+                    <Text
+                        id="expandedLabel"
+                        text="No filters active"
+                    />
+                </f:expandedContent>
+                <f:snappedContent>
+                    <Text
+                        id="snappedLabel"
+                        text="No filters active"
+                    />
+                </f:snappedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar
+                        id="filterbar"
+                        persistencyKey="myPersKey"
+                        useToolbar="false"
+                        search=".onFetchOData"
+                        filterChange=".onFilterChange"
+                        afterVariantLoad=".onAfterVariantLoad"
+                    >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem
+                                name="companyCode"
+                                label="Company Code"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <Input
+                                        id="idCompanyCodeInput"
+                                        tooltip="Select from list"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        value='1000'
+                                        valueHelpRequest=".onOpenCompanyCodeDialog"
+                                        placeholder="Select Company Code"
+                                        showClearIcon="true"
+                                        required="true"
+                                        enabled="false"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+
+                            <fb:FilterGroupItem
+                                name="fiscalYear"
+                                label="Fiscal Year"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <Input
+                                        id="idFiscalYearInput"
+                                        tooltip="Select from list"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest=".onOpenFiscalYearDialog"
+                                        placeholder="Select Fiscal Year"
+                                        showClearIcon="true"
+                                        required="true"
+                                        enabled="true"
+                                        change=".onFiscalYearClear"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem
+                                name="deliveryDocument"
+                                label="Document No"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <Input
+                                        id="idDeliveryDocumentInput"
+                                        tooltip="Select from list"
+                                        showValueHelp="true"
+                                        valueHelpOnly="true"
+                                        valueHelpRequest=".onOpenDeliveryDocumentDialog"
+                                        value="{globalData>/selectedDocumentNosDisplay}"
+                                        placeholder="Select Document No"
+                                        showClearIcon="true"
+                                        required="true"
+                                        enabled="false"
+                                    />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+
+        <f:content>
+            <VBox
+                class="sapUiSmallMargin"
+                fitContainer="true"
+                height="100%"
+            >
+                <core:HTML
+                    id="pdfIframeContainer"
+                    content=""
+                    class="pdf-container"
+                />
+            </VBox>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

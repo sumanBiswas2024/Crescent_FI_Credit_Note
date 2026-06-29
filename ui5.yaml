@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: com.crescent.app.creditnoteformfico
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+        backend:
+          - authenticationType: reentranceTicket
+            path: /sap
+            url: https://my418443.s4hana.cloud.sap
+            destination: BAS_Crescent_Dev
+          - url: https://my418443-api.s4hana.cloud.sap
+            authenticationType: SAMLAssertion
+            destination: BAS_Crescent_Dev
+            path: /sap/opu/odata4/sap/zfi_credit_note_srv_bind/srvd/sap/zfi_credit_note_srv/0001/
+          - url: https://my418443-api.s4hana.cloud.sap
+            authenticationType: SAMLAssertion
+            destination: BAS_Crescent_Dev
+            path: /sap/opu/odata4/sap/zfi_crdnt_srv_bind/srvd/sap/zfi_crdnt_srv/0001/
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        flp:
+          theme: sap_horizon
