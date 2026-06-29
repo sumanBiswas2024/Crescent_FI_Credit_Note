@@ -564,8 +564,8 @@ sap.ui.define([
                 igstAmt: this._formatNumber(item.Igst_Amt, 2)
             }));
 
-            // ✅ Skip first record if Document_No starts with "17"
-            if (data.value[0]?.Document_No?.startsWith("17")) {
+            // ✅ Skip first record if Document_No starts with "16"
+            if (data.value[0]?.Document_No?.startsWith("16")) {
                 items = items.slice(1);
             }
 
@@ -598,12 +598,12 @@ sap.ui.define([
                                 {
                                     stack: [
                                         { text: 'CRESCENT FOUNDRY CO PVT. LTD.', style: 'subHeader', alignment: 'left', margin: [2, 2, 2, 2] },
-                                        { text: firstRecord.Plant_Address_Line1 || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: firstRecord.Plant_Address_Line2 || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Plant_Address_Line1 || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Plant_Address_Line2 || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
                                         { text: 'CIN NO: U29100WB1982PTCO35426', style: 'tableBody', alignment: 'left', margin: [2, 4, 2, 0] },
-                                        { text: `GSTNO: ${firstRecord.GSTN_No || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `PAN NO: ${firstRecord.PAN_No || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `STATE CODE: ${firstRecord.Plant_State_Code || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] }
+                                        { text: `GSTNO: ${firstRecord.GSTN_No || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: `PAN NO: ${firstRecord.PAN_No || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: `STATE CODE: ${firstRecord.Plant_State_Code || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] }
                                     ],
                                     border: [true, true, true, true]
                                 },
@@ -614,10 +614,10 @@ sap.ui.define([
                                         { text: `Website: admin@crescentfoundry.in`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
                                         { text: '4th FLOOR, SUIT NO 406, LORDS BUILDING, 7/1 LORD SINHA ROAD', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
                                         { text: 'Kolkata 700071, WB', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `Document No: ${firstRecord.Document_No || 'N/A'}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 15, 2, 0] },
-                                        { text: `Document Date: ${this._formatDate(firstRecord.Document_Date) || 'N/A'}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 0, 2, 0] },
-                                        { text: `Ref. No: ${firstRecord.ref_doc || 'N/A'}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 0, 2, 0] },
-                                        { text: `Ref. Date: ${this._formatDate(firstRecord.ref_date) || 'N/A'}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 0, 2, 0] }
+                                        { text: `Document No: ${firstRecord.Document_No || ''}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 15, 2, 0] },
+                                        { text: `Document Date: ${this._formatDate(firstRecord.Document_Date) || ''}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 0, 2, 0] },
+                                        { text: `Ref. No: ${firstRecord.ref_doc || ''}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 0, 2, 0] },
+                                        { text: `Ref. Date: ${this._formatDate(firstRecord.ref_date) || ''}`, style: 'tableBody', alignment: 'left', bold: true, margin: [2, 0, 2, 0] }
                                     ],
                                     border: [true, true, true, true]
                                 },
@@ -638,26 +638,26 @@ sap.ui.define([
                                 {
                                     stack: [
                                         { text: 'Bill To', style: 'subHeader', alignment: 'left', margin: [2, 2, 2, 2] },
-                                        { text: firstRecord.Customer_Name || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: firstRecord.Customer_Address_Line1 || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: firstRecord.Customer_Address_Line3 || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Customer_Name || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Customer_Address_Line1 || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Customer_Address_Line3 || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
                                         { text: firstRecord.Customer_Address_Line4 || ' ', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `GST No: ${firstRecord.Customer_GST_No || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `PAN No: ${firstRecord.Customer_PAN_No || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `Place of Supply: ${firstRecord.Place_Of_Supply_City || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] }
+                                        { text: `GST No: ${firstRecord.Customer_GST_No || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: `PAN No: ${firstRecord.Customer_PAN_No || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: `Place of Supply: ${firstRecord.Place_Of_Supply_City || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] }
                                     ],
                                     border: [true, true, true, true]
                                 },
                                 {
                                     stack: [
                                         { text: 'Ship To', style: 'subHeader', alignment: 'left', margin: [2, 2, 2, 2] },
-                                        { text: firstRecord.Customer_Name || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: firstRecord.Customer_Address_Line1 || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: firstRecord.Customer_Address_Line3 || 'N/A', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Customer_Name || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Customer_Address_Line1 || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: firstRecord.Customer_Address_Line3 || '', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
                                         { text: firstRecord.Customer_Address_Line4 || ' ', style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `GST No: ${firstRecord.Customer_GST_No || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `PAN No: ${firstRecord.Customer_PAN_No || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
-                                        { text: `Place of Supply: ${firstRecord.Place_Of_Supply_City || 'N/A'}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] }
+                                        { text: `GST No: ${firstRecord.Customer_GST_No || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: `PAN No: ${firstRecord.Customer_PAN_No || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] },
+                                        { text: `Place of Supply: ${firstRecord.Place_Of_Supply_City || ''}`, style: 'tableBody', alignment: 'left', margin: [2, 0, 2, 0] }
                                     ],
                                     border: [true, true, true, true]
                                 },
